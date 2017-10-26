@@ -16,6 +16,9 @@
   ],
   "author": "Arthur Lacoste <arthak@gmail.com>",
   "license": "CC-BY-NC-SA-4.0",
+  "scripts": {
+    "test": "node test/unicorn.js"
+  },
   "bugs": {
     "url": "https://github.com/arthurlacoste/child-process-fork-string/issues"
   },
