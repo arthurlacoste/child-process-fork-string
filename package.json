@@ -1,0 +1,23 @@
+{
+  "name": "child-process-fork-string",
+  "version": "1.0.0",
+  "description": "You can now exec nodejs from a string, and use fork-like command to set this up.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurlacoste/child-process-fork-string.git"
+  },
+  "keywords": [
+    "child_process",
+    "fork",
+    "string",
+    "eval",
+    "vm"
+  ],
+  "author": "Arthur Lacoste <arthak@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/arthurlacoste/child-process-fork-string/issues"
+  },
+  "homepage": "https://github.com/arthurlacoste/child-process-fork-string#readme"
+}
