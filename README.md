@@ -1,11 +1,34 @@
 # Child_process.forkString
 
-
 [![NPM Version][npm-version]][npm-url]
 [![travis][travis-badge]][travis-url]
 
 
 Yeah. You can now exec nodejs/javascript from a string, and use fork-like command to set this up. This is really similar to [Child_process.fork](https://github.com/nodejs/node/blob/master/doc/api/child_process.md#child_processforkmodulepath-args-options), it's use a string instead of a file.
+
+## This package is no longer required as of NodeJS v14.2.0
+[There exists an undocumented option which evaluates scripts instead of executing a module.](https://stackoverflow.com/a/61900145)
+```
+const { fork } = require('child_process');
+
+const script = `
+  process.on('message', (message) => {
+    if (message === 'ping') process.send('pong');
+    if (message === 'exit') process.exit(0);
+  });
+`;
+const child = fork('-e', [script]);
+
+child.on('exit', (exitCode) => {
+  console.log(`Child process exited with ${exitCode}`)
+});
+
+child.on('message', (message) => {
+  if (message === 'pong') child.send('exit');
+});
+
+child.send('ping');
+```
 
 
 ## Install
